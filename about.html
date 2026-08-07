@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Standard Practice</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="progressBar"></div>
+
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="container navbar">
+    <a href="index.html" class="brand-logo">
+  <img src="logo.png" alt="Standard Practice logo" class="logo-img" />
+  <div class="logo-text">
+    <span class="logo-title">Standard Practice</span>
+    <span class="logo-sub">Professional Services</span>
+  </div>
+</a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="case_studies.html" class="nav-link">Case Studies</a>
+        <a href="insight.html" class="nav-link">Insights</a>
+        <a href="careers.html" class="nav-link">Careers</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contact.html" class="btn btn-primary nav-cta-btn">Speak with us</a>
+      </nav>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PAGE INTRO — gradient strip (breadcrumb, tag, heading, lead
+         text, and the first divider). See .page-intro in style.css. -->
+    <section class="page-intro">
+      <div class="container">
+
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="separator">&rsaquo;</span>
+          <span class="current">About</span>
+        </nav>
+
+        <span class="section-tag">ABOUT US</span>
+        <h1 class="heading-primary">A senior firm, <br><span class="text-accent">by design.</span></h1>
+
+        <p class="lead-text">
+          A frontline professional services firm built around a team of seasoned, highly qualified experts — small enough to care, senior enough to help, independent enough to be worth listening to.
+        </p>
+
+        <!-- Divider now lives inside the gradient section, so the
+             color runs all the way down to meet it. -->
+        <div class="services-divider"></div>
+
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT — plain cream background, unchanged. -->
+    <section class="services" style="padding-top: 40px;">
+      <div class="container">
+
+        <!-- 1. OUR STORY SECTION (Side-by-Side Layout) -->
+        <div class="story-grid reveal-stagger">
+          <div class="story-media">
+            <img src="https://images.unsplash.com/photo-1573164574511-73c773193279?q=80&w=1000&auto=format&fit=crop" alt="Standard Practice Team" />
+          </div>
+          <div class="story-content">
+            <span class="section-tag">OUR STORY</span>
+            <h2 class="heading-secondary">Seasoned expertise, applied honestly.</h2>
+            <div class="story-text">
+              <p>Standard Practice Professional brings together a team of seasoned, highly qualified experts across Audit and Assurance, Taxation, Consulting Services, Actuarial Services, Advisory, and Accounting Services.</p>
+              <p>Our partners carry over twenty-five years of cumulative experience, distinguishing themselves across agriculture, healthcare, energy, manufacturing, financial services, oil and gas, technology and telecommunications, and real estate, among others.</p>
+              <p>That experience now adds up to more than 700 completed engagements — and a client base, both local and international, that continues to recommend us, a trust we never take for granted.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Horizontal Divider -->
+        <div class="services-divider" style="margin-top: 80px; margin-bottom: 80px;"></div>
+
+        <!-- 2. OUR VALUES SECTION (4 Columns Grid with Circular Icons) -->
+        <div class="reveal">
+          <span class="section-tag">OUR VALUES</span>
+          <h2 class="heading-secondary" style="margin-bottom: 48px;">What we hold ourselves to.</h2>
+          
+          <div class="values-grid reveal-stagger">
+            <!-- Value Card 1 -->
+            <div class="value-card">
+              <div class="value-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <h3 class="value-title">Integrity</h3>
+              <p class="value-desc">One of our two core values. How we work is as important as what we deliver — always.</p>
+            </div>
+
+            <!-- Value Card 2 -->
+            <div class="value-card">
+              <div class="value-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3 class="value-title">Customer Satisfaction</h3>
+              <p class="value-desc">Our other core value. The relationships that keep clients recommending us, locally and abroad.</p>
+            </div>
+
+            <!-- Value Card 3 -->
+            <div class="value-card">
+              <div class="value-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <h3 class="value-title">Excellence</h3>
+              <p class="value-desc">The work is the marketing. We hold ourselves to a standard our clients can feel.</p>
+            </div>
+
+            <!-- Value Card 4 -->
+            <div class="value-card">
+              <div class="value-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <h3 class="value-title">Independence</h3>
+              <p class="value-desc">We tell you what we think, not what you paid to hear.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Horizontal Divider -->
+        <div class="services-divider" style="margin-top: 80px; margin-bottom: 80px;"></div>
+
+        <!-- 3. MISSION / VISION / PROMISE SECTION (Vertical Accent Line Borders) -->
+        <div class="pillars-section reveal-stagger">
+          <div class="pillars-grid">
+            
+            <!-- Pillar 01 -->
+            <div class="pillar-col">
+              <span class="pillar-number">01</span>
+              <h3 class="pillar-title">Mission</h3>
+              <p class="pillar-desc">To enable organisations to focus on their core business operations, while we efficiently handle the support services necessary for their success.</p>
+            </div>
+
+            <!-- Pillar 02 -->
+            <div class="pillar-col">
+              <span class="pillar-number">02</span>
+              <h3 class="pillar-title">Vision</h3>
+              <p class="pillar-desc">A West African market where professional advice is a genuine source of competitive advantage — not a checkbox.</p>
+            </div>
+
+            <!-- Pillar 03 -->
+            <div class="pillar-col">
+              <span class="pillar-number">03</span>
+              <h3 class="pillar-title">Promise</h3>
+              <p class="pillar-desc">Senior on every file. Honest in every recommendation. Present until the work is done.</p>
+            </div>
+
+          </div>
+
+          <div class="pillars-cta">
+            <a href="#" class="btn btn-primary">Meet the team &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-grid">
+          
+          <div class="footer-brand">
+      <a href="index.html" class="brand-logo">
+        <img src="logo.png" alt="Standard Practice logo" class="logo-img" />
+        <div class="logo-text">
+          <span class="logo-title">Standard Practice</span>
+          <span class="logo-sub">Professional Services</span>
+        </div>
+     </a>
+            <p>A frontline professional services firm with over twenty-five years of cumulative experience, delivering audit, tax, actuarial, advisory, consulting and accounting services across Nigeria, with representation in the United Kingdom, United States, Kenya and Ghana.</p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="case_studies.html">Case Studies</a></li>
+              <li><a href="insight.html">Insights</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="services.html#audit-assurance">Audit and Assurance</a></li>
+              <li><a href="services.html#taxation">Taxation</a></li>
+              <li><a href="services.html#consulting-services">Consulting Services</a></li>
+              <li><a href="services.html#actuarial-services">Actuarial Services</a></li>
+              <li><a href="services.html#advisory">Advisory</a></li>
+              <li><a href="services.html#accounting-services">Accounting Services</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Get in Touch</h4>
+            <ul>
+              <li>44 Ikorodu Road, Fadeyi, Lagos, Nigeria</li>
+              <li>Suit B3, Abuja Shopping Complex, Wuse Zone 3, Abuja, Nigeria</li>
+              <li>+234-805-606-9623</li>
+              <li><a href="mailto:info@standardpracticeprofessional.com">info@standardpracticeprofessional.com</a></li>
+            </ul>
+
+            <h4 class="newsletter-h4">Newsletter</h4>
+            <form class="newsletter-form" onsubmit="event.preventDefault();">
+              <input type="email" placeholder="Your work email" required />
+              <button type="submit">Join</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Standard Practice Professional. All rights reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to Top">
+    &uarr;
+  </button>
+
+  <!-- Floating Chat Widget: injected by chatbot.js, no markup needed here -->
+
+  <script src="script.js"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>

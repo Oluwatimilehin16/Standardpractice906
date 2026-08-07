@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insights — Standard Practice</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="progressBar"></div>
+
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="container navbar">
+  <a href="index.html" class="brand-logo">
+    <img src="logo.png" alt="Standard Practice logo" class="logo-img" />
+    <div class="logo-text">
+      <span class="logo-title">Standard Practice</span>
+      <span class="logo-sub">Professional Services</span>
+    </div>
+  </a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="case_studies.html" class="nav-link active">Case Studies</a>
+        <a href="insight.html" class="nav-link">Insights</a>
+        <a href="careers.html" class="nav-link">Careers</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contact.html" class="btn btn-primary nav-cta-btn">Speak with us</a>
+      </nav>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PAGE INTRO — gradient strip (breadcrumb, tag, heading, lead
+         text, and the first divider). See .page-intro in style.css. -->
+    <section class="page-intro">
+      <div class="container">
+
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="separator">&rsaquo;</span>
+          <span class="current">Insights</span>
+        </nav>
+
+        <!-- Hero Header -->
+        <span class="section-tag">INSIGHTS</span>
+        <h1 class="heading-primary reveal">
+          Notes from <br>the <span class="text-accent">practice.</span>
+        </h1>
+
+        <p class="lead-text">
+          Short, well-sourced perspectives on the questions we're being asked in the boardroom.
+        </p>
+
+        <!-- Divider now lives inside the gradient section, so the
+             color runs all the way down to meet it. -->
+        <div class="services-divider"></div>
+
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="container">
+
+        <!-- Filter Bar & Search Box -->
+        <div class="insights-filter-bar reveal">
+          <div class="filter-pills">
+            <button class="filter-pill active" data-category="all">All</button>
+            <button class="filter-pill" data-category="strategy">Strategy</button>
+            <button class="filter-pill" data-category="regulatory">Regulatory</button>
+            <button class="filter-pill" data-category="market">Market</button>
+          </div>
+
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="insightSearch" placeholder="Search insights..." />
+          </div>
+        </div>
+
+
+        <!-- Insights Grid -->
+        <div class="insights-grid reveal">
+          
+          <!-- Article Card 1 -->
+          <article class="insight-card" data-category="regulatory">
+            <div class="insight-media">
+              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=800&auto=format&fit=crop" alt="CBN reforms discussion" />
+            </div>
+            <div class="insight-content">
+              <div class="insight-meta">
+                <span class="category-tag">Regulatory</span>
+                <span class="read-time">6 min read</span>
+              </div>
+              <h3 class="insight-title">
+                <a href="#">Navigating the next wave of CBN reforms</a>
+              </h3>
+              <p class="insight-excerpt">
+                Five practical moves Nigerian financial institutions should make before Q1 to stay ahead of tightening capital and reporting requirements.
+              </p>
+              <div class="insight-footer">
+                <span class="insight-date">March 12, 2026</span>
+                <a href="#" class="read-more-link">Read &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article Card 2 -->
+          <article class="insight-card" data-category="strategy">
+            <div class="insight-media">
+              <img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&w=800&auto=format&fit=crop" alt="Strategy planning" />
+            </div>
+            <div class="insight-content">
+              <div class="insight-meta">
+                <span class="category-tag">Strategy</span>
+                <span class="read-time">8 min read</span>
+              </div>
+              <h3 class="insight-title">
+                <a href="#">Building a real strategy, not a strategic plan</a>
+              </h3>
+              <p class="insight-excerpt">
+                Most Nigerian boards approve plans. Few approve strategies. Here's the difference — and why it changes everything about execution.
+              </p>
+              <div class="insight-footer">
+                <span class="insight-date">February 27, 2026</span>
+                <a href="#" class="read-more-link">Read &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article Card 3 -->
+          <article class="insight-card" data-category="market">
+            <div class="insight-media">
+              <img src="https://images.unsplash.com/photo-1573164574397-dd250bc8a598?q=80&w=800&auto=format&fit=crop" alt="Lagos market outlook" />
+            </div>
+            <div class="insight-content">
+              <div class="insight-meta">
+                <span class="category-tag">Market</span>
+                <span class="read-time">5 min read</span>
+              </div>
+              <h3 class="insight-title">
+                <a href="#">Lagos market outlook: capital, consumers and confidence</a>
+              </h3>
+              <p class="insight-excerpt">
+                A concise read on the demand-side signals shaping investment decisions across consumer, financial services and industrial sectors.
+              </p>
+              <div class="insight-footer">
+                <span class="insight-date">February 04, 2026</span>
+                <a href="#" class="read-more-link">Read &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-grid">
+          
+          <div class="footer-brand">
+      <a href="index.html" class="brand-logo">
+        <img src="logo.png" alt="Standard Practice logo" class="logo-img" />
+        <div class="logo-text">
+          <span class="logo-title">Standard Practice</span>
+          <span class="logo-sub">Professional Services</span>
+        </div>
+     </a>
+
+            <p>A frontline professional services firm with over twenty-five years of cumulative experience, delivering audit, tax, actuarial, advisory, consulting and accounting services across Nigeria, with representation in the United Kingdom, United States, Kenya and Ghana.</p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="case_studies.html">Case Studies</a></li>
+              <li><a href="insight.html">Insights</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="services.html#audit-assurance">Audit and Assurance</a></li>
+              <li><a href="services.html#taxation">Taxation</a></li>
+              <li><a href="services.html#consulting-services">Consulting Services</a></li>
+              <li><a href="services.html#actuarial-services">Actuarial Services</a></li>
+              <li><a href="services.html#advisory">Advisory</a></li>
+              <li><a href="services.html#accounting-services">Accounting Services</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Get in Touch</h4>
+            <ul>
+              <li>44 Ikorodu Road, Fadeyi, Lagos, Nigeria</li>
+              <li>Suit B3, Abuja Shopping Complex, Wuse Zone 3, Abuja, Nigeria</li>
+              <li>+234-805-606-9623</li>
+              <li><a href="mailto:info@standardpracticeprofessional.com">info@standardpracticeprofessional.com</a></li>
+            </ul>
+
+            <h4 class="newsletter-h4">Newsletter</h4>
+            <form class="newsletter-form" onsubmit="event.preventDefault();">
+              <input type="email" placeholder="Your work email" required />
+              <button type="submit">Join</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Standard Practice Professional. All rights reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to Top">
+    &uarr;
+  </button>
+
+  <!-- Floating Chat Widget: injected by chatbot.js, no markup needed here -->
+
+  <script src="script.js"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>

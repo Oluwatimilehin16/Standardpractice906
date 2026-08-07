@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — Standard Practice</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="progressBar"></div>
+
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo">
+  <img src="logo.png" alt="Standard Practice logo" class="logo-img" />
+  <div class="logo-text">
+    <span class="logo-title">Standard Practice</span>
+    <span class="logo-sub">Professional Services</span>
+  </div>
+</a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="case-studies.html" class="nav-link">Case Studies</a>
+        <a href="insights.html" class="nav-link">Insights</a>
+        <a href="careers.html" class="nav-link">Careers</a>
+        <a href="faq.html" class="nav-link active">FAQ</a>
+        <a href="contact.html" class="btn btn-primary nav-cta-btn">Speak with us</a>
+      </nav>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PAGE INTRO — gradient strip (breadcrumb, tag, heading, lead
+         text, and the first divider). See .page-intro in style.css. -->
+    <section class="page-intro">
+      <div class="container">
+
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="separator">&rsaquo;</span>
+          <span class="current">FAQ</span>
+        </nav>
+
+        <!-- Hero Header -->
+        <span class="section-tag">FAQ</span>
+        <h1 class="heading-primary reveal">
+          Questions, <span class="text-accent">answered.</span>
+        </h1>
+
+        <p class="lead-text" style="padding-bottom: 60px;">
+          If you cannot find what you are looking for, please write to us — we reply within one business day.
+        </p>
+
+        <!-- Divider now lives inside the gradient section, so the
+             color runs all the way down to meet it. -->
+        <div class="services-divider"></div>
+
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT — plain cream background, unchanged. -->
+    <section class="services" >
+      <div class="container">
+
+        <!-- Centered Single Accordion Card -->
+        <div class="faq-accordion-card reveal">
+
+          <!-- Row 1: Open by default -->
+          <div class="faq-row active">
+            <button class="faq-trigger" onclick="toggleFaqRow(this)">
+              <span>Where are you based?</span>
+              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-body">
+              <p>Our offices are on Ikorodu Road, Fadeyi in Lagos, and at Wuse Zone 3 in Abuja, with representation across several other Nigerian states and internationally in the United Kingdom, United States, Kenya and Ghana.</p>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="faq-row">
+            <button class="faq-trigger" onclick="toggleFaqRow(this)">
+              <span>What sectors do you serve?</span>
+              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-body">
+              <p>Agriculture, healthcare, energy, manufacturing, financial services, oil and gas, technology and telecommunications, real estate, among others.</p>
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="faq-row">
+            <button class="faq-trigger" onclick="toggleFaqRow(this)">
+              <span>What services do you offer?</span>
+              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-body">
+              <p>Audit and Assurance, Taxation, Consulting Services, Actuarial Services, Advisory, and Accounting Services — delivered by seasoned, highly qualified partners and professional staff.</p>
+            </div>
+          </div>
+
+          <!-- Row 4 -->
+          <div class="faq-row">
+            <button class="faq-trigger" onclick="toggleFaqRow(this)">
+              <span>Do you work with international clients?</span>
+              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-body">
+              <p>Yes. Beyond our offices in Lagos and Abuja, we have representation in the United Kingdom, United States, Kenya and Ghana, and we regularly support clients recommending us both locally and internationally.</p>
+            </div>
+          </div>
+
+          <!-- Row 5 -->
+          <div class="faq-row">
+            <button class="faq-trigger" onclick="toggleFaqRow(this)">
+              <span>How much experience does your team have?</span>
+              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-body">
+              <p>Our partners bring over twenty-five years of cumulative experience and have collectively completed more than 700 engagements across diverse industries.</p>
+            </div>
+          </div>
+
+          <!-- Row 6 -->
+          <div class="faq-row">
+            <button class="faq-trigger" onclick="toggleFaqRow(this)">
+              <span>Is my information kept confidential?</span>
+              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-body">
+              <p>Absolutely. Integrity is one of our core values, and every engagement is governed by strict confidentiality and conflict-of-interest protocols.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Centered Pill CTA Button -->
+        <div class="faq-cta-center reveal">
+          <a href="contact.html" class="btn-ask-direct">
+            Ask us directly &rarr;
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-grid">
+          
+          <!-- Brand Info -->
+          <div class="footer-brand">
+      <a href="index.html" class="brand-logo">
+        <img src="logo.png" alt="Standard Practice logo" class="logo-img" />
+        <div class="logo-text">
+          <span class="logo-title">Standard Practice</span>
+          <span class="logo-sub">Professional Services</span>
+        </div>
+     </a>
+
+            <p>A frontline professional services firm with over twenty-five years of cumulative experience, delivering audit, tax, actuarial, advisory, consulting and accounting services across Nigeria, with representation in the United Kingdom, United States, Kenya and Ghana.</p>
+          </div>
+
+          <!-- Explore -->
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="case_studies.html">Case Studies</a></li>
+              <li><a href="insight.html">Insights</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="services.html#audit-assurance">Audit and Assurance</a></li>
+              <li><a href="services.html#taxation">Taxation</a></li>
+              <li><a href="services.html#consulting-services">Consulting Services</a></li>
+              <li><a href="services.html#actuarial-services">Actuarial Services</a></li>
+              <li><a href="services.html#advisory">Advisory</a></li>
+              <li><a href="services.html#accounting-services">Accounting Services</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact & Newsletter -->
+          <div class="footer-col">
+            <h4>Get in Touch</h4>
+            <ul>
+              <li>44 Ikorodu Road, Fadeyi, Lagos, Nigeria</li>
+              <li>Suit B3, Abuja Shopping Complex, Wuse Zone 3, Abuja, Nigeria</li>
+              <li>+234-805-606-9623</li>
+              <li><a href="mailto:info@standardpracticeprofessional.com">info@standardpracticeprofessional.com</a></li>
+            </ul>
+
+            <h4 class="newsletter-h4">Newsletter</h4>
+            <form class="newsletter-form" onsubmit="event.preventDefault();">
+              <input type="email" placeholder="Your work email" required />
+              <button type="submit">Join</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Standard Practice Professional. All rights reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to Top">
+    &uarr;
+  </button>
+
+  <!-- Floating Chat Widget: injected by chatbot.js, no markup needed here -->
+
+  <script>
+    function toggleFaqRow(btn) {
+      const row = btn.parentElement;
+      row.classList.toggle('active');
+    }
+  </script>
+  <script src="script.js"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>

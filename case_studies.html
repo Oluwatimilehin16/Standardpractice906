@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Studies — Standard Practice</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="progressBar"></div>
+
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="container navbar">
+    <a href="index.html" class="brand-logo">
+      <img src="logo.png" alt="Standard Practice logo" class="logo-img" />
+      <div class="logo-text">
+        <span class="logo-title">Standard Practice</span>
+        <span class="logo-sub">Professional Services</span>
+      </div>
+    </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="case_studies.html" class="nav-link active">Case Studies</a>
+        <a href="insight.html" class="nav-link">Insights</a>
+        <a href="careers.html" class="nav-link">Careers</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contact.html" class="btn btn-primary nav-cta-btn">Speak with us</a>
+      </nav>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-intro">
+      <div class="container">
+
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="separator">&rsaquo;</span>
+          <span class="current">Case Studies</span>
+        </nav>
+
+        <!-- Hero Header -->
+        <span class="section-tag">CASE STUDIES</span>
+        <h1 class="heading-primary reveal">
+          Quiet clients. <span class="text-accent"> Loud</span> outcomes.
+        </h1>
+
+        <p class="lead-text"  style="padding-bottom: 60px;">
+          A selection of representative engagements across our Audit and Assurance, Taxation, Consulting, Actuarial, Advisory and Accounting practices. Names withheld under confidentiality — outcomes shared with permission.
+        </p>
+
+        <div class="services-divider"></div>
+
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="container">
+
+        <!-- Case Studies List (Full-width Horizontal Cards) -->
+        <div class="case-studies-list reveal">
+
+          <!-- Case Study Card 01 -->
+          <article class="case-study-card">
+            <div class="case-card-media">
+              <img src="https://images.unsplash.com/photo-1653566031535-bcf33e1c2893?auto=format&fit=crop&w=1000&q=80" alt="Executive Meeting" loading="lazy" />
+            </div>
+
+            <div class="case-card-body">
+              <div class="case-card-header">
+                <span class="case-category">FINANCIAL SERVICES</span>
+                <span class="case-client">Tier-1 Nigerian Bank</span>
+              </div>
+
+              <h2 class="case-title">Rebuilding a compliance function in 120 days</h2>
+
+              <!-- Metric Pill Badge -->
+              <div class="case-metric-pill">
+                <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+                <span>42% reduction in regulatory findings</span>
+              </div>
+
+              <a href="#" class="case-link">Discuss a similar engagement &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Case Study Card 02 -->
+          <article class="case-study-card">
+            <div class="case-card-media">
+              <img src="https://images.unsplash.com/photo-1573497701240-345a300b8d36?auto=format&fit=crop&w=1000&q=80" alt="Supply Chain Operations" loading="lazy" />
+            </div>
+
+            <div class="case-card-body">
+              <div class="case-card-header">
+                <span class="case-category">FMCG & MANUFACTURING</span>
+                <span class="case-client">Multinational Consumer Goods</span>
+              </div>
+
+              <h2 class="case-title">Cross-border FX optimization and treasury restructuring</h2>
+
+              <!-- Metric Pill Badge -->
+              <div class="case-metric-pill">
+                <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+                <span>28% reduction in annual foreign exchange losses</span>
+              </div>
+
+              <a href="#" class="case-link">Discuss a similar engagement &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Case Study Card 03 (previously a duplicate of Card 02 — now a distinct engagement) -->
+          <article class="case-study-card">
+            <div class="case-card-media">
+              <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=1000&q=80" alt="Actuarial Advisory Session" loading="lazy" />
+            </div>
+
+            <div class="case-card-body">
+              <div class="case-card-header">
+                <span class="case-category">OIL & GAS</span>
+                <span class="case-client">Independent Exploration Company</span>
+              </div>
+
+              <h2 class="case-title">Actuarial valuation ahead of a pension scheme wind-down</h2>
+
+              <!-- Metric Pill Badge -->
+              <div class="case-metric-pill">
+                <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+                <span>₦1.2bn in pension liabilities accurately reserved</span>
+              </div>
+
+              <a href="#" class="case-link">Discuss a similar engagement &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-grid">
+
+          <!-- Brand Info -->
+          <div class="footer-brand">
+      <a href="index.html" class="brand-logo">
+        <img src="logo.png" alt="Standard Practice logo" class="logo-img" />
+        <div class="logo-text">
+          <span class="logo-title">Standard Practice</span>
+          <span class="logo-sub">Professional Services</span>
+        </div>
+     </a>
+            <p>A frontline professional services firm with over twenty-five years of cumulative experience, delivering audit, tax, actuarial, advisory, consulting and accounting services across Nigeria, with representation in the United Kingdom, United States, Kenya and Ghana.</p>
+          </div>
+
+          <!-- Explore -->
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="case_studies.html">Case Studies</a></li>
+              <li><a href="insight.html">Insights</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="services.html#audit-assurance">Audit and Assurance</a></li>
+              <li><a href="services.html#taxation">Taxation</a></li>
+              <li><a href="services.html#consulting-services">Consulting Services</a></li>
+              <li><a href="services.html#actuarial-services">Actuarial Services</a></li>
+              <li><a href="services.html#advisory">Advisory</a></li>
+              <li><a href="services.html#accounting-services">Accounting Services</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact & Newsletter -->
+          <div class="footer-col">
+            <h4>Get in Touch</h4>
+            <ul>
+              <li>44 Ikorodu Road, Fadeyi, Lagos, Nigeria</li>
+              <li>Suit B3, Abuja Shopping Complex, Wuse Zone 3, Abuja, Nigeria</li>
+              <li>+234-805-606-9623</li>
+              <li><a href="mailto:info@standardpracticeprofessional.com">info@standardpracticeprofessional.com</a></li>
+            </ul>
+
+            <h4 class="newsletter-h4">Newsletter</h4>
+            <form class="newsletter-form" onsubmit="event.preventDefault();">
+              <input type="email" placeholder="Your work email" required />
+              <button type="submit">Join</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Standard Practice Professional. All rights reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to Top">
+    &uarr;
+  </button>
+
+  <!-- Floating Chat Widget: injected by chatbot.js, no markup needed here -->
+
+  <script src="script.js"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>
