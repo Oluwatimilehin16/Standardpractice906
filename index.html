@@ -12,7 +12,6 @@
 
   <link rel="stylesheet" href="style.css">
 
-
   <style>
     .ticker-logo {
       height: 40px;
@@ -22,7 +21,6 @@
       /* filter: grayscale(100%); */
       transition: filter 0.2s ease, opacity 0.2s ease;
     }
-
   </style>
 </head>
 <body>
@@ -33,13 +31,13 @@
   <header class="header">
     <div class="scroll-progress-bar" id="progressBar"></div>
     <div class="container navbar">
-<a href="index.html" class="brand-logo">
-  <img src="logo.png" alt="Standard Practice logo" class="logo-img" />
-  <div class="logo-text">
-    <span class="logo-title">Standard Practice</span>
-    <span class="logo-sub">Professional Services</span>
-  </div>
-</a>
+      <a href="index.html" class="brand-logo">
+        <img src="logo.png" alt="Standard Practice logo" class="logo-img" />
+        <div class="logo-text">
+          <span class="logo-title">Standard Practice</span>
+          <span class="logo-sub">Professional Services</span>
+        </div>
+      </a>
 
       <nav class="nav-menu" id="navMenu">
         <a href="about.html" class="nav-link">About</a>
@@ -61,7 +59,7 @@
   </header>
 
   <main>
-    <!-- HERO SECTION (untouched — image and layout kept exactly as-is) -->
+    <!-- HERO SECTION -->
     <section class="hero reveal" id="about">
       <div class="container hero-grid">
         <div class="hero-content">
@@ -100,7 +98,7 @@
         <div class="hero-media">
           <img src="https://images.stockcake.com/public/c/8/6/c861b103-8b38-4248-acfc-b31a7ba50d1b_large/corporate-meeting-highrise-stockcake.jpg" alt="Standard Practice consultants in a boardroom" />
 
-          <div class="hero-badge-engagement">
+          <div class="hero-badge-engagement badge-slide active">
             <div class="badge-tag">ENGAGEMENT</div>
             <div class="badge-text">Compliance rebuild, 120 days</div>
             <div class="badge-progress">
@@ -109,7 +107,7 @@
             <div class="badge-percent">74% delivered</div>
           </div>
 
-          <div class="hero-badge-trust">
+          <div class="hero-badge-trust badge-slide">
             <div class="badge-trust-icon">&#9733;</div>
             <div class="badge-trust-copy">
               <div class="badge-trust-title">Trusted by leading Nigerian institutions</div>
@@ -131,26 +129,26 @@
       </div>
 
       <div class="ticker-track">
-        <span class="ticker-item"><img src="logos/logo1.png"  class="ticker-logo" /></span>
-        <span class="ticker-item"><img src="logos/logo2.png"  class="ticker-logo" /></span>
-        <span class="ticker-item"><img src="logos/logo3.png"  class="ticker-logo" /></span>
-        <span class="ticker-item"><img src="logos/logo4.png"  class="ticker-logo" /></span>
-        <span class="ticker-item"><img src="logos/logo5.png"  class="ticker-logo" /></span>
-        <span class="ticker-item"><img src="logos/logo6.png"  class="ticker-logo" /></span>
-        <span class="ticker-item"><img src="logos/logo7.png"  class="ticker-logo" /></span>
-        <span class="ticker-item"><img src="logos/logo8.png"  class="ticker-logo" /></span>
-        <span class="ticker-item"><img src="logos/logo9.png"  class="ticker-logo" /></span>
-        <span class="ticker-item"><img src="logos/logo10.png"  class="ticker-logo" /></span>
+        <span class="ticker-item"><img src="logos/logo1.png" class="ticker-logo" /></span>
+        <span class="ticker-item"><img src="logos/logo2.png" class="ticker-logo" /></span>
+        <span class="ticker-item"><img src="logos/logo3.png" class="ticker-logo" /></span>
+        <span class="ticker-item"><img src="logos/logo4.png" class="ticker-logo" /></span>
+        <span class="ticker-item"><img src="logos/logo5.png" class="ticker-logo" /></span>
+        <span class="ticker-item"><img src="logos/logo6.png" class="ticker-logo" /></span>
+        <span class="ticker-item"><img src="logos/logo7.png" class="ticker-logo" /></span>
+        <span class="ticker-item"><img src="logos/logo8.png" class="ticker-logo" /></span>
+        <span class="ticker-item"><img src="logos/logo9.png" class="ticker-logo" /></span>
+        <span class="ticker-item"><img src="logos/logo10.png" class="ticker-logo" /></span>
         <!-- Duplicated for infinite loop -->
-        <span class="ticker-item"><img src="logos/logo1.png"  class="ticker-logo" /></span>
-        <span class="ticker-item"><img src="logos/logo2.png"  class="ticker-logo" /></span>
-        <span class="ticker-item"><img src="logos/logo3.png"  class="ticker-logo" /></span>
-        <span class="ticker-item"><img src="logos/logo4.png"  class="ticker-logo" /></span>
-        <span class="ticker-item"><img src="logos/logo5.png"  class="ticker-logo" /></span>
+        <span class="ticker-item"><img src="logos/logo1.png" class="ticker-logo" /></span>
+        <span class="ticker-item"><img src="logos/logo2.png" class="ticker-logo" /></span>
+        <span class="ticker-item"><img src="logos/logo3.png" class="ticker-logo" /></span>
+        <span class="ticker-item"><img src="logos/logo4.png" class="ticker-logo" /></span>
+        <span class="ticker-item"><img src="logos/logo5.png" class="ticker-logo" /></span>
       </div>
     </section>
 
-    <!-- WHAT WE DO -->
+    <!-- WHAT WE DO (FIVE PRACTICES, ONE STANDARD CARDS) -->
     <section class="services" id="services">
       <div class="container">
         <span class="section-tag">WHAT WE DO</span>
@@ -160,7 +158,7 @@
         </p>
 
         <div class="services-grid reveal-stagger">
-          <div class="service-card">
+          <div class="service-card active">
             <div>
               <h3 class="service-title">Audit and Assurance</h3>
               <p class="service-desc">Independent, rigorous assurance you and your stakeholders can rely on.</p>
@@ -213,97 +211,96 @@
     </section>
 
     <!-- OUR APPROACH -->
-  <section class="approach" id="approach">
-  <div class="container">
-    <div class="section-tag-approach">
-      <span class="section-tag-line"></span>
-      OUR APPROACH
-    </div>
-
-    <h2 class="approach-heading">
-      Discipline over drama.<br>Judgement over jargon.
-    </h2>
-
-    <p class="approach-lead">
-      We are, by design, a small firm of senior operators. That means the person in the first meeting is the person on the last one — and the work reflects it.
-    </p>
-
-    <div class="approach-cards-grid reveal-stagger">
-      <div class="approach-card-dark">
-        <div class="approach-card-num">01</div>
-        <h3 class="approach-card-title">Senior-led, always</h3>
-        <p class="approach-card-desc">Partners on the file, from diagnostic to hand-over. No pyramid, no proxy.</p>
-      </div>
-
-      <div class="approach-card-dark">
-        <div class="approach-card-num">02</div>
-        <h3 class="approach-card-title">Independent by conviction</h3>
-        <p class="approach-card-desc">We keep our conflict list short and our recommendations honest, even when it's inconvenient.</p>
-      </div>
-
-      <div class="approach-card-dark">
-        <div class="approach-card-num">03</div>
-        <h3 class="approach-card-title">Built to sustain</h3>
-        <p class="approach-card-desc">Every engagement leaves your organisation more capable than we found it.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- WHAT CLIENTS SAY -->
-  <section class="testimonials-v2">
-  <div class="container">
-    <div class="testimonials-flex reveal">
-
-      <!-- LEFT COLUMN: heading, copy, dots -->
-      <div class="testimonials-left">
-        <div class="section-tag-approach" class="tag-gold">
+    <section class="approach" id="approach">
+      <div class="container">
+        <div class="section-tag-approach">
           <span class="section-tag-line"></span>
-          WHAT CLIENTS SAY
+          OUR APPROACH
         </div>
 
-        <h2 class="testimonials-heading">
-          Quiet references.<br>Loud outcomes.
+        <h2 class="approach-heading">
+          Discipline over drama.<br>Judgement over jargon.
         </h2>
 
-        <p class="testimonials-lead">
-          We rarely publicise our clients. When they choose to speak on our behalf, we listen carefully.
+        <p class="approach-lead">
+          We are, by design, a small firm of senior operators. That means the person in the first meeting is the person on the last one — and the work reflects it.
         </p>
 
-        <div class="testimonial-dots" id="testimonialDots">
-          <button onclick="setTestimonial(0)" aria-label="Slide 1" class="testimonial-dot-v2 active"></button>
-          <button onclick="setTestimonial(1)" aria-label="Slide 2" class="testimonial-dot-v2"></button>
-          <button onclick="setTestimonial(2)" aria-label="Slide 3" class="testimonial-dot-v2"></button>
-        </div>
-      </div>
+        <div class="approach-cards-grid reveal-stagger">
+          <div class="approach-card-dark">
+            <div class="approach-card-num">01</div>
+            <h3 class="approach-card-title">Senior-led, always</h3>
+            <p class="approach-card-desc">Partners on the file, from diagnostic to hand-over. No pyramid, no proxy.</p>
+          </div>
 
-      <!-- RIGHT COLUMN: testimonial card, no arrow -->
-      <div class="testimonials-right">
-        <div class="testimonial-card-v2">
+          <div class="approach-card-dark">
+            <div class="approach-card-num">02</div>
+            <h3 class="approach-card-title">Independent by conviction</h3>
+            <p class="approach-card-desc">We keep our conflict list short and our recommendations honest, even when it's inconvenient.</p>
+          </div>
 
-          <span class="testimonial-quote-mark-v2">"</span>
-
-          <div id="testimonialContent" class="testimonial-content-v2">
-            <blockquote class="testimonial-quote-v2">
-              "Standard Practice brought a level of clarity and discipline our board had been searching for. They challenged us where it mattered and delivered where it counted."
-            </blockquote>
-
-            <div class="testimonial-author-v2">
-              <img id="clientAvatar" src="img/test2.png" alt="" class="testimonial-author-img-v2">
-              <div>
-                <div class="testimonial-author-name-v2" id="clientName">Adaeze Okafor</div>
-                <div class="testimonial-author-role-v2" id="clientRole">Group CEO, Financial Services</div>
-              </div>
-            </div>
+          <div class="approach-card-dark">
+            <div class="approach-card-num">03</div>
+            <h3 class="approach-card-title">Built to sustain</h3>
+            <p class="approach-card-desc">Every engagement leaves your organisation more capable than we found it.</p>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
+    <!-- WHAT CLIENTS SAY -->
+    <section class="testimonials-v2">
+      <div class="container">
+        <div class="testimonials-flex reveal">
 
-    <!-- INSIGHTS (SHARP THINKING, PLAINLY WRITTEN) -->
+          <!-- LEFT COLUMN: heading, copy, dots -->
+          <div class="testimonials-left">
+            <div class="section-tag-approach tag-gold">
+              <span class="section-tag-line"></span>
+              WHAT CLIENTS SAY
+            </div>
+
+            <h2 class="testimonials-heading">
+              Quiet references.<br>Loud outcomes.
+            </h2>
+
+            <p class="testimonials-lead">
+              We rarely publicise our clients. When they choose to speak on our behalf, we listen carefully.
+            </p>
+
+            <div class="testimonial-dots" id="testimonialDots">
+              <button onclick="setTestimonial(0)" aria-label="Slide 1" class="testimonial-dot-v2 active"></button>
+              <button onclick="setTestimonial(1)" aria-label="Slide 2" class="testimonial-dot-v2"></button>
+              <button onclick="setTestimonial(2)" aria-label="Slide 3" class="testimonial-dot-v2"></button>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: testimonial card -->
+          <div class="testimonials-right">
+            <div class="testimonial-card-v2">
+              <span class="testimonial-quote-mark-v2">"</span>
+
+              <div id="testimonialContent" class="testimonial-content-v2">
+                <blockquote class="testimonial-quote-v2">
+                  "Standard Practice brought a level of clarity and discipline our board had been searching for. They challenged us where it mattered and delivered where it counted."
+                </blockquote>
+
+                <div class="testimonial-author-v2">
+                  <img id="clientAvatar" src="img/test2.png" alt="" class="testimonial-author-img-v2">
+                  <div>
+                    <div class="testimonial-author-name-v2" id="clientName">Adaeze Okafor</div>
+                    <div class="testimonial-author-role-v2" id="clientRole">Group CEO, Financial Services</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INSIGHTS (SHARP THINKING) CARDS SECTION -->
     <section class="insights" id="insights">
       <div class="container">
         <div class="insights-header">
@@ -311,11 +308,10 @@
             <span class="section-tag">INSIGHTS</span>
             <h2 class="heading-secondary insights-heading-flush">Sharp thinking, plainly written.</h2>
           </div>
-          <a href="insight.html" class="btn btn-outline">All insights &rarr;</a>
         </div>
 
         <div class="insights-grid reveal-stagger">
-          <article class="article-card">
+          <article class="article-card active">
             <img src="img/insight3.jpg" alt="Navigating the next wave of CBN reforms" class="article-img" />
             <div class="article-body">
               <div class="article-meta">
@@ -355,37 +351,37 @@
     </section>
 
     <!-- LET'S TALK -->
-<section class="lets-talk">
-  <div class="container">
-    <div class="lets-talk-box reveal">
+    <section class="lets-talk">
+      <div class="container">
+        <div class="lets-talk-box reveal">
 
-      <div class="lets-talk-copy">
-        <div class="section-tag-approach" class="tag-gold">
-          <span class="section-tag-line"></span>
-          LET'S TALK
+          <div class="lets-talk-copy">
+            <div class="section-tag-approach tag-gold">
+              <span class="section-tag-line"></span>
+              LET'S TALK
+            </div>
+
+            <h2 class="lets-talk-heading">
+              A single conversation can save you a year of drift.
+            </h2>
+
+            <p class="lets-talk-lead">
+              Tell us what you're working on. We'll respond within one business day with the right partner to have the conversation with.
+            </p>
+          </div>
+
+          <div class="lets-talk-actions">
+            <a href="contact.html" class="lets-talk-btn-primary">
+              Book a consultation <span>&rarr;</span>
+            </a>
+
+            <a href="tel:+2348056069623" class="lets-talk-btn-outline">
+              +234-805-606-9623 <span>&#10003;</span>
+            </a>
+          </div>
         </div>
-
-        <h2 class="lets-talk-heading">
-          A single conversation can save you a year of drift.
-        </h2>
-
-        <p class="lets-talk-lead">
-          Tell us what you're working on. We'll respond within one business day with the right partner to have the conversation with.
-        </p>
       </div>
-
-      <div class="lets-talk-actions">
-        <a href="contact.html" class="lets-talk-btn-primary">
-          Book a consultation <span>&rarr;</span>
-        </a>
-
-        <a href="tel:+2348056069623" class="lets-talk-btn-outline">
-          +234-805-606-9623 <span>&#10003;</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
   </main>
 
   <!-- FOOTER -->
@@ -394,13 +390,13 @@
       <div class="footer-top">
         <div class="footer-grid">
           <div class="footer-brand">
-      <a href="index.html" class="brand-logo">
-        <img src="logo.png" alt="Standard Practice logo" class="logo-img" />
-        <div class="logo-text">
-          <span class="logo-title">Standard Practice</span>
-          <span class="logo-sub">Professional Services</span>
-        </div>
-     </a>
+            <a href="index.html" class="brand-logo">
+              <img src="logo.png" alt="Standard Practice logo" class="logo-img" />
+              <div class="logo-text">
+                <span class="logo-title">Standard Practice</span>
+                <span class="logo-sub">Professional Services</span>
+              </div>
+            </a>
 
             <p>A frontline professional services firm with over twenty-five years of cumulative experience, delivering audit, tax, advisory, corporate and accounting services across Nigeria, with representation in the United Kingdom, United States, Kenya and Ghana.</p>
           </div>
@@ -458,14 +454,12 @@
     </div>
   </footer>
 
-  <!-- BACK TO TOP BUTTON (site-wide) -->
-<button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to top" class="back-to-top-btn">
-  &uarr;
-</button>
+  <!-- BACK TO TOP BUTTON -->
+  <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to top" class="back-to-top-btn">
+    &uarr;
+  </button>
 
-  <!-- Floating Chat Widget: injected by chatbot.js, no markup needed here -->
-
-<script src="script.js"></script>
-<script src="chatbot.js"></script>
+  <script src="script.js"></script>
+  <script src="chatbot.js"></script>
 </body>
 </html>

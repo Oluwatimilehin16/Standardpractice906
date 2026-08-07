@@ -3157,3 +3157,105 @@ ul {
     gap: 28px;
   }
 }
+
+
+/* Mobile Screens (600px and under) */
+@media (max-width: 600px) {
+  /* Button Sizing and Full-Width Layout */
+  .btn,
+  .lets-talk-btn-primary,
+  .lets-talk-btn-outline {
+    padding: 10px 18px;
+    font-size: 0.85rem;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+}
+
+/* ==========================================================================
+   Mobile Auto-Switching Cards Styling
+   ========================================================================== */
+
+/* Base Grid Layout (Desktop & Tablet) */
+.cards-grid,
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .cards-grid,
+  .insights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile View: Auto-Switching Carousel Mode */
+/* ==========================================================================
+   Smooth Auto-Switching Cards Transition for Mobile (Tight Spacing)
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  /* Reduced grid container height & align items to the top to eliminate top gap */
+  .services-grid,
+  .insights-grid {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: start !important; /* Pulls cards tight against the subtext */
+    position: relative;
+    width: 100%;
+    min-height: 200px; /* Reduced to fit tightly without extra white space */
+    margin-top: 16px !important; /* Controls exact distance from subtext */
+  }
+
+  /* Base state for hidden cards */
+  .service-card,
+  .article-card {
+    grid-area: 1 / 1;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(12px) scale(0.97);
+    filter: blur(3px);
+    transition: 
+      opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1),
+      transform 0.7s cubic-bezier(0.25, 1, 0.5, 1),
+      filter 0.7s cubic-bezier(0.25, 1, 0.5, 1),
+      visibility 0.7s ease;
+    box-sizing: border-box;
+  }
+
+  /* Active card smoothly glides in */
+  .service-card.active,
+  .article-card.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+    z-index: 2;
+  }
+
+  /* Card exiting smoothly fades out upwards */
+  .service-card.exiting,
+  .article-card.exiting {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.97);
+    filter: blur(3px);
+    z-index: 1;
+  }
+}

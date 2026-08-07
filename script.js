@@ -161,3 +161,58 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+/* ==========================================================================
+   Smooth Card Auto-Switching (Practice Cards & Insights Cards Only)
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  function setupSmoothMobileAutoSwitch(containerSelector, itemSelector, intervalMs = 4500) {
+    const container = document.querySelector(containerSelector);
+    if (!container) return;
+
+    const items = container.querySelectorAll(itemSelector);
+    if (items.length <= 1) return;
+
+    let currentIndex = 0;
+
+    // Set initial active card
+    items.forEach((item, index) => {
+      if (index === 0) {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active", "exiting");
+      }
+    });
+
+    setInterval(() => {
+      // Auto-switch only on mobile view
+      if (window.innerWidth <= 600) {
+        const previousItem = items[currentIndex];
+
+        // Advance to next card
+        currentIndex = (currentIndex + 1) % items.length;
+        const nextItem = items[currentIndex];
+
+        // Transition out previous item
+        previousItem.classList.remove("active");
+        previousItem.classList.add("exiting");
+
+        // Transition in next item
+        nextItem.classList.remove("exiting");
+        nextItem.classList.add("active");
+
+        // Clean up transition class
+        setTimeout(() => {
+          previousItem.classList.remove("exiting");
+        }, 800);
+      } else {
+        // Reset classes for desktop layout
+        items.forEach((item) => item.classList.remove("active", "exiting"));
+      }
+    }, intervalMs);
+  }
+
+  // Initialize auto-switch ONLY for Practice cards and Insight cards
+  setupSmoothMobileAutoSwitch(".services-grid", ".service-card", 4500);
+  setupSmoothMobileAutoSwitch(".insights-grid", ".article-card", 4500);
+});
