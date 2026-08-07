@@ -1426,23 +1426,6 @@ ul {
   font-size: 0.8rem;
 }
 
-.lovable-bar {
-  margin-top: 8px;
-  background-color: #121814;
-  color: #FFF;
-  font-size: 0.75rem;
-  padding: 6px 12px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  box-shadow: var(--shadow-sm);
-}
-
-.lovable-bar span {
-  color: #FF5A5F;
-}
-
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -1491,22 +1474,45 @@ ul {
    11. RESPONSIVE BREAKPOINTS
    ========================================================================== */
 @media (max-width: 900px) {
+  /* Ensure the navbar acts as the positioning context */
   .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
     position: relative;
   }
 
+  /* Keep the logo icon anchored to the left */
+  .brand-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Absolutely center the text in the navbar */
   .logo-text {
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     align-items: center;
     text-align: center;
+    pointer-events: none; /* Prevents text from overlapping clicks on nearby elements */
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 8px;
+    z-index: 101;
   }
 
   .nav-menu {
     display: none;
-    position: fixed;
+    position: absolute;
     top: 80px;
     left: 0;
     width: 100%;
@@ -1517,13 +1523,10 @@ ul {
     background-color: var(--bg-cream);
     border-bottom: 1px solid var(--border-light);
     box-sizing: border-box;
+    box-shadow: var(--shadow-lg);
   }
 
   .nav-menu.active {
-    display: flex;
-  }
-
-  .hamburger {
     display: flex;
   }
 
