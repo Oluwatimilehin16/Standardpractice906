@@ -25,7 +25,7 @@
     },
     {
       keywords: ["service", "services", "practice", "practices", "what do you do", "offer"],
-      response: "We offer six core services: Audit and Assurance, Taxation, Consulting Services, Actuarial Services, Advisory, and Accounting Services. Want details on any of these?"
+      response: "We offer five core services: Audit and Assurance, Taxation, Corporate Services, Advisory, and Accounting Services. Want details on any of these?"
     },
     {
       keywords: ["audit", "assurance"],
@@ -36,15 +36,15 @@
       response: "Our Taxation practice covers compliant, efficient tax planning and advisory across the jurisdictions we operate in."
     },
     {
-      keywords: ["consult", "consulting"],
-      response: "Our Consulting Services team provides practical, industry-tested advice to help organisations run better."
+      keywords: ["corporate", "corporate"],
+      response: "Our Corporate Services team provides practical, industry-tested services to help organisations run better."
     },
     {
       keywords: ["actuarial", "actuary", "pension", "insurance"],
       response: "Our Actuarial Services practice handles risk and valuation modelling for pensions, insurance and beyond."
     },
     {
-      keywords: ["advisory", "advice", "board", "corporate"],
+      keywords: ["advisory", "advice", "board", "advise"],
       response: "Our Advisory practice provides board-level counsel for the decisions that shape an organisation's future."
     },
     {
