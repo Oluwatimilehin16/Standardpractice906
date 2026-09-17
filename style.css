@@ -2784,8 +2784,9 @@ ul {
 
 .service-sidebar-card .btn-primary {
   background-color: var(--accent-gold);
-  color: var(--text-dark);
+  color: var(--bg-white);
   width: 100%;
+  border-color: var(--accent-gold);
   justify-content: center;
 }
 
