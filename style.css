@@ -203,10 +203,11 @@ ul {
 }
 
 .logo-sub {
-  font-size: 0.65rem;
+  font-size: 0.7rem;
+  font-weight: 700;
   letter-spacing: 1.8px;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--accent-green);
   margin-top: 3px;
 }
 
@@ -3246,4 +3247,761 @@ ul {
     filter: blur(3px);
     z-index: 1;
   }
+}
+/* ==========================================================================
+   13. CHAT WIDGET — OVERFLOW, WRAPPING & RESPONSIVE FIXES
+   These rules come last on purpose: they override the base widget styles
+   in section 11 without editing them.
+   ========================================================================== */
+
+/* The panel must never be wider than the viewport it sits in. */
+.chat-box {
+  width: min(380px, calc(100vw - 32px));
+  max-width: calc(100vw - 32px);
+  max-height: min(560px, calc(100vh - 120px));
+}
+
+/* chatbot.js toggles .open; section 11 only knew about .active. */
+.chat-box.open,
+.chat-box.active {
+  display: flex;
+}
+
+.chat-header {
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+.chat-header-title {
+  font-family: var(--font-body);
+  letter-spacing: 0.2px;
+}
+
+.chat-close {
+  flex-shrink: 0;
+  line-height: 1;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.chat-close:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.chat-body {
+  height: auto;
+  flex: 1 1 auto;
+  min-height: 240px;
+  max-height: 380px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ---- The core fix: no text may escape a bubble. -------------------------
+   min-width:0 lets a flex child shrink below its content width; the wrap
+   properties break long words, URLs and email addresses instead of
+   letting them push the bubble past its max-width.                        */
+.chat-msg {
+  min-width: 0;
+  max-width: 85%;
+  width: fit-content;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: pre-wrap;
+  hyphens: auto;
+  box-sizing: border-box;
+}
+
+.chat-msg a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+}
+
+/* A bubble that carries chips needs room for them to wrap onto new rows. */
+.chat-msg:has(.chat-options) {
+  max-width: 92%;
+}
+
+.chat-options {
+  max-width: 100%;
+}
+
+.chat-chip {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-align: left;
+  line-height: 1.35;
+  font-family: var(--font-body);
+}
+
+/* Link-style chips inside bot answers (Read the page / Email us / ...) */
+.chat-chip.chat-chip-link {
+  background: var(--accent-green);
+  border-color: var(--accent-green);
+  color: var(--bg-white);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.chat-chip.chat-chip-link:hover {
+  background: var(--accent-green-hover);
+  border-color: var(--accent-green-hover);
+  color: var(--bg-white);
+}
+
+/* Typing indicator */
+.chat-msg.typing {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 14px 16px;
+}
+
+.chat-msg.typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--text-muted);
+  opacity: 0.45;
+  animation: chatTypingBounce 1.2s infinite ease-in-out;
+}
+
+.chat-msg.typing span:nth-child(2) { animation-delay: 0.15s; }
+.chat-msg.typing span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes chatTypingBounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.35; }
+  30%           { transform: translateY(-4px); opacity: 0.9; }
+}
+
+.chat-input-area {
+  flex-shrink: 0;
+  gap: 8px;
+  align-items: center;
+}
+
+.chat-input-area input {
+  min-width: 0;
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--bg-cream);
+}
+
+.chat-input-area input::placeholder {
+  color: var(--text-muted);
+}
+
+.chat-input-area button {
+  flex-shrink: 0;
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: 9px 16px;
+  transition: background-color 0.2s ease;
+}
+
+.chat-input-area button:hover {
+  background: var(--accent-green-hover);
+}
+
+/* On phones the panel becomes a sheet anchored to the viewport, so a long
+   answer can never spill off the side of the screen. */
+@media (max-width: 480px) {
+  .chat-widget {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    align-items: flex-end;
+  }
+
+  .chat-box {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 76px;
+    width: auto;
+    max-width: none;
+    max-height: calc(100vh - 140px);
+  }
+
+  .chat-body {
+    max-height: none;
+  }
+
+  .chat-msg {
+    max-width: 90%;
+    font-size: 0.88rem;
+  }
+
+  .chat-trigger span {
+    font-size: 0.8rem;
+  }
+}
+
+/* ==========================================================================
+   14. DOCUMENT-STYLE ARTICLE (case studies / technical papers)
+   ========================================================================== */
+.doc-body > p,
+.doc-block > p {
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+
+.doc-body > p:last-child,
+.doc-block > p:last-child {
+  margin-bottom: 0;
+}
+
+.doc-block {
+  margin-bottom: 52px;
+}
+
+.doc-block:last-child {
+  margin-bottom: 0;
+}
+
+.doc-block-num {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 10px;
+}
+
+.doc-block-title {
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-dark);
+  margin-bottom: 18px;
+}
+
+.doc-sub-title {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 28px 0 10px;
+}
+
+.doc-sub-title:first-child {
+  margin-top: 0;
+}
+
+/* Lead paragraph that opens a numbered section */
+.doc-lead {
+  color: var(--text-dark) !important;
+  font-size: 1.08rem !important;
+  line-height: 1.8 !important;
+}
+
+/* --- Lists ------------------------------------------------------------- */
+.doc-list {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+  counter-reset: doc-counter;
+}
+
+.doc-list:last-child {
+  margin-bottom: 0;
+}
+
+.doc-list > li {
+  position: relative;
+  padding-left: 30px;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.doc-list > li strong,
+.doc-list > li b {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.doc-list > li em {
+  color: var(--text-dark);
+}
+
+/* Bulleted variant */
+.doc-list.bulleted > li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 12px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--accent-gold);
+}
+
+/* Numbered variant */
+.doc-list.numbered > li {
+  counter-increment: doc-counter;
+}
+
+.doc-list.numbered > li::before {
+  content: counter(doc-counter) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--accent-gold);
+  line-height: 1.75;
+}
+
+/* A nested list (e.g. the financial context in the worked example) */
+.doc-list .doc-list {
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+/* --- Callout card ------------------------------------------------------- */
+.doc-callout {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-left: 3px solid var(--accent-gold);
+  border-radius: 14px;
+  padding: 24px 26px;
+  margin-bottom: 24px;
+}
+
+.doc-callout-title {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-green);
+  margin-bottom: 10px;
+}
+
+.doc-callout p {
+  color: var(--text-muted);
+  font-size: 0.97rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* --- Tables ------------------------------------------------------------- */
+.doc-table-caption {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+/* The scroll container is the only element allowed to scroll sideways, so
+   a wide table never widens the page itself. */
+.doc-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  background-color: var(--bg-white);
+  margin-bottom: 24px;
+}
+
+.doc-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+.doc-table th,
+.doc-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-light);
+  line-height: 1.6;
+}
+
+.doc-table thead th {
+  background-color: var(--bg-cream);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--accent-green);
+  white-space: normal;
+}
+
+.doc-table tbody th {
+  font-weight: 700;
+  color: var(--text-dark);
+  width: 24%;
+  background-color: rgba(251, 246, 243, 0.55);
+}
+
+.doc-table tbody td {
+  color: var(--text-muted);
+}
+
+.doc-table tbody td strong {
+  color: var(--text-dark);
+}
+
+.doc-table tbody tr:last-child th,
+.doc-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.doc-table tbody tr:hover th,
+.doc-table tbody tr:hover td {
+  background-color: rgba(232, 168, 145, 0.07);
+}
+
+/* Highlight the column carrying the current/preferred position */
+.doc-table .col-current {
+  background-color: rgba(232, 168, 145, 0.1);
+  color: var(--text-dark);
+}
+
+.doc-table tbody tr:hover .col-current {
+  background-color: rgba(232, 168, 145, 0.16);
+}
+
+/* --- Author signature --------------------------------------------------- */
+.doc-signature {
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.doc-signature-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--border-light);
+}
+
+.doc-signature-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.3;
+}
+
+.doc-signature-name span {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.4px;
+}
+
+.doc-signature-role {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 0.3px;
+}
+
+/* --- Article meta row (read time / date) -------------------------------- */
+.doc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+.doc-meta .doc-meta-sep {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--accent-gold);
+}
+
+@media (max-width: 992px) {
+  .doc-block-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .doc-block {
+    margin-bottom: 40px;
+  }
+
+  .doc-block-title {
+    font-size: 1.35rem;
+  }
+
+  .doc-body > p,
+  .doc-block > p {
+    font-size: 0.97rem;
+  }
+
+  .doc-table th,
+  .doc-table td {
+    padding: 13px 16px;
+  }
+
+  .doc-signature {
+    gap: 14px;
+  }
+}
+
+/* ==========================================================================
+   15. MISC PAGE POLISH
+   ========================================================================== */
+
+/* Insights grid on the home page carries two live articles, not three. */
+.insights-grid.insights-grid-2up {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 900px) {
+  .insights-grid.insights-grid-2up {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .insights-grid.insights-grid-2up {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Article cards are links now — keep the type from inheriting link colour. */
+a.article-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Long case-study titles should wrap, not overflow their card. */
+.case-title,
+.article-title,
+.insight-card-title {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* --- Contact form feedback --------------------------------------------- */
+.form-status {
+  margin-top: 16px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  display: none;
+  font-family: var(--font-body);
+}
+
+.form-status.is-visible {
+  display: block;
+}
+
+.form-status.is-success {
+  background-color: rgba(122, 74, 58, 0.07);
+  border: 1px solid var(--accent-gold);
+  color: var(--text-dark);
+}
+
+.form-status.is-error {
+  background-color: rgba(217, 114, 79, 0.08);
+  border: 1px solid var(--accent-pop);
+  color: var(--text-dark);
+}
+
+.form-status a {
+  color: var(--accent-green);
+  font-weight: 600;
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}
+
+.btn-submit[disabled] {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Form controls should inherit the body font rather than the UA default. */
+.contact-form-card input,
+.contact-form-card select,
+.contact-form-card textarea,
+.newsletter-form input,
+.newsletter-form button {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+
+.contact-form-card textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Insights header now carries a CTA next to the heading. */
+.insights-header {
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.insights-header .btn-outline {
+  flex-shrink: 0;
+}
+
+/* Long technical-paper titles need a smaller, tighter setting than the
+   4rem marketing hero, and a measure that stays readable. */
+.heading-primary.heading-doc {
+  font-size: clamp(1.75rem, 3.4vw, 2.9rem);
+  line-height: 1.16;
+  letter-spacing: -0.015em;
+  max-width: 940px;
+  margin-bottom: 0;
+  text-wrap: balance;
+}
+
+@media (max-width: 640px) {
+  .heading-primary.heading-doc {
+    font-size: clamp(1.5rem, 6vw, 1.9rem);
+    line-height: 1.22;
+  }
+}
+
+/* Case cards now carry full paper titles, so the 2.25rem setting is too
+   heavy — step it down and let the body column shrink properly. */
+.case-study-card .case-title {
+  font-size: clamp(1.35rem, 2.1vw, 1.8rem);
+  line-height: 1.28;
+  margin-bottom: 22px;
+}
+
+.case-card-body {
+  min-width: 0;
+}
+
+.case-card-header .case-client {
+  overflow-wrap: anywhere;
+}
+
+/* Empty state for the insights filter/search. */
+.insights-empty {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.8;
+  max-width: 560px;
+  margin: 24px auto 0;
+}
+
+.insights-empty a {
+  color: var(--accent-green);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.insights-empty-reset {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--accent-green);
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.insight-card[hidden] {
+  display: none !important;
+}
+
+.insights-grid[hidden] {
+  display: none !important;
+}
+
+/* ==========================================================================
+   16. GLOBAL FONT NORMALISATION
+   Form controls do NOT inherit font-family from the page by default, so
+   every button, input, select and textarea without an explicit rule was
+   rendering in the browser UI font instead of Plus Jakarta Sans. Element
+   selectors sit below every class rule in specificity, so the explicit
+   families already declared elsewhere still win.
+   ========================================================================== */
+button,
+input,
+select,
+textarea,
+optgroup {
+  font-family: inherit;
+  letter-spacing: inherit;
+}
+
+/* Headings without a utility class should still be Playfair. */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+/* ...except the footer column headings and the chat header, which the
+   design deliberately sets in the body face. */
+.footer-col h4,
+.footer-brand h4,
+.newsletter-h4,
+.doc-sub-title,
+.chat-header-title {
+  font-family: var(--font-body);
+}
+
+/* Keep the uppercase footer labels at the weight they have always had. */
+.footer-col h4,
+.footer-brand h4,
+.newsletter-h4 {
+  font-weight: 700;
+}
+
+/* The body face renders slightly small next to Playfair; nudge the numerals
+   and small caps used in tags so baselines line up across a row. */
+.section-tag,
+.case-category,
+.doc-block-num,
+.doc-meta,
+.article-meta {
+  font-variant-numeric: tabular-nums;
+}
+
+/* These two never declared a weight and so rendered at the UA default of
+   700. The global h1-h6 rule above would silently drop them to 600, so pin
+   them where they have always been. */
+.heading-secondary,
+.article-title {
+  font-weight: 700;
 }

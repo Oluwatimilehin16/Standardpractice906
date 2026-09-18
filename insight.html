@@ -102,7 +102,7 @@
 
 
         <!-- Insights Grid -->
-        <div class="insights-grid reveal">
+        <div class="insights-grid insights-grid-2up reveal" id="insightsGrid">
 
           <!-- Article Card 1: Dividend Taxation / EDT repeal -->
           <article class="insight-card" data-category="regulatory">
@@ -115,7 +115,7 @@
                 <span class="read-time">6 min read</span>
               </div>
               <h3 class="insight-title">
-                <a href="case_study_dividend_taxation.html">The end of the Excess Dividend Tax: what changes under the NTA</a>
+                <a href="case_study_dividend_taxation.html">Evolutionary Analysis of Dividend Taxation in Nigeria: From Section 19 CITA to the Nigeria Tax Act (NTA)</a>
               </h3>
               <p class="insight-excerpt">
                 For decades, Section 19 of CITA taxed dividends as corporate profit whenever a company paid out more than it earned in a given year — a rule that quietly double-taxed retained earnings and punished holding companies. The Nigeria Tax Act repeals it outright. Here's what boards need to know about the new Section 19, and why dividend policy decisions are now materially safer.
@@ -138,7 +138,7 @@
                 <span class="read-time">7 min read</span>
               </div>
               <h3 class="insight-title">
-                <a href="case_study_books_of_account.html">Why proper books of account are now non-negotiable under the NTAA</a>
+                <a href="case_study_books_of_account.html">The Imperative of Keeping Proper Books of Account Under the New Tax Regime</a>
               </h3>
               <p class="insight-excerpt">
                 Section 31 of the Nigeria Tax Administration Act puts record-keeping at the centre of self-assessment — every taxable entity must maintain records sufficient to establish its true tax position, retained for a minimum of six years. Fall short, and the tax authority can fall back on a Best of Judgment assessment, treating raw bank inflows as taxable turnover and disallowing expenses outright. We break down what changes, and what businesses should do now.
@@ -151,6 +151,12 @@
           </article>
 
         </div>
+
+        <!-- Shown by script.js when a filter or search matches nothing -->
+        <p class="insights-empty" id="insightsEmpty" hidden>
+          Nothing here yet under that heading. Try <button type="button" class="insights-empty-reset" data-category="all">All insights</button>, or write to us at
+          <a href="mailto:info@standardpracticeprofessional.com">info@standardpracticeprofessional.com</a> — we are always happy to write about what clients are actually asking.
+        </p>
 
       </div>
     </section>

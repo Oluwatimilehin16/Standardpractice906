@@ -173,8 +173,25 @@
 
           <!-- RIGHT COLUMN: Interactive Form -->
           <div class="contact-form-card reveal">
-            <form id="contactForm" onsubmit="event.preventDefault();">
-              
+            <!--
+              Posts to info@standardpracticeprofessional.com through FormSubmit.
+              script.js intercepts the submit and sends it over AJAX so the
+              visitor stays on the page; if that request fails for any reason it
+              falls back to opening a pre-filled email instead. The delivery
+              address lives in one place: the action URL and data-mailto below.
+            -->
+            <form id="contactForm"
+                  action="https://formsubmit.co/info@standardpracticeprofessional.com"
+                  method="POST"
+                  data-mailto="info@standardpracticeprofessional.com">
+
+              <!-- FormSubmit configuration -->
+              <input type="hidden" name="_subject" value="New enquiry from standardpracticeprofessional.com" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <!-- Honeypot: real people never see it, bots fill it in. -->
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
               <div class="form-row-2col">
                 <div class="form-group">
                   <label for="name">NAME</label>
@@ -203,6 +220,7 @@
                   <option value="" disabled selected>Select a service...</option>
                   <option value="audit-assurance">Audit and Assurance</option>
                   <option value="taxation">Taxation</option>
+                  <option value="corporate-services">Corporate Services</option>
                   <option value="consulting-services">Consulting Services</option>
                   <option value="actuarial-services">Actuarial Services</option>
                   <option value="advisory">Advisory</option>
@@ -222,6 +240,8 @@
               <p class="form-disclaimer">
                 Your information is handled in line with our <a href="#">privacy policy</a>.
               </p>
+
+              <div class="form-status" id="contactFormStatus" role="status" aria-live="polite"></div>
             </form>
           </div>
 

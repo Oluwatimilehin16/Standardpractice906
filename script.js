@@ -99,50 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 200);
   };
 
-  // 5. Chat Widget
-  const chatTrigger = document.getElementById('chatTrigger');
-  const chatBox = document.getElementById('chatBox');
-  const chatClose = document.getElementById('chatClose');
-  const chatForm = document.getElementById('chatForm');
-  const chatInput = document.getElementById('chatInput');
-  const chatBody = document.getElementById('chatBody');
-
-  if (chatTrigger && chatBox && chatClose) {
-    chatTrigger.addEventListener('click', () => chatBox.classList.toggle('active'));
-    chatClose.addEventListener('click', () => chatBox.classList.remove('active'));
-  }
-
-  function appendUserMessage(text) {
-    if (!chatBody) return;
-    const userMsg = document.createElement('div');
-    userMsg.className = 'chat-msg user';
-    userMsg.textContent = text;
-    chatBody.appendChild(userMsg);
-    chatBody.scrollTop = chatBody.scrollHeight;
-  }
-
-  function appendBotMessage(text) {
-    if (!chatBody) return;
-    const botMsg = document.createElement('div');
-    botMsg.className = 'chat-msg bot';
-    botMsg.textContent = text;
-    chatBody.appendChild(botMsg);
-    chatBody.scrollTop = chatBody.scrollHeight;
-  }
-
-  if (chatForm && chatInput) {
-    chatForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const text = chatInput.value.trim();
-      if (!text) return;
-      appendUserMessage(text);
-      chatInput.value = '';
-
-      setTimeout(() => {
-        appendBotMessage("Thank you for reaching out. A partner from our team will review your query and respond shortly.");
-      }, 700);
-    });
-  }
+  // 5. Chat Widget — owned entirely by chatbot.js (markup, state and replies).
 
   // 6. Back To Top
   const backToTopBtn = document.getElementById('backToTop');
@@ -215,4 +172,265 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize auto-switch ONLY for Practice cards and Insight cards
   setupSmoothMobileAutoSwitch(".services-grid", ".service-card", 4500);
   setupSmoothMobileAutoSwitch(".insights-grid", ".article-card", 4500);
+});
+/* ==========================================================================
+   7. FORMS — contact enquiry + footer newsletter
+   Both post to the firm's real inbox (info@standardpracticeprofessional.com)
+   through FormSubmit, over AJAX so the visitor never leaves the page.
+   If the request fails — offline, blocked, service down — we fall back to
+   opening a pre-filled email in the visitor's own mail client, so a message
+   is never silently lost.
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+
+  const FIRM_EMAIL = 'info@standardpracticeprofessional.com';
+  const ENDPOINT = 'https://formsubmit.co/ajax/' + FIRM_EMAIL;
+
+  function showStatus(el, type, html) {
+    if (!el) return;
+    el.className = 'form-status is-visible is-' + type;
+    el.innerHTML = html;
+  }
+
+  function buildMailtoFallback(subject, body) {
+    return 'mailto:' + FIRM_EMAIL +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+  }
+
+  /* ---- Contact page enquiry form ---------------------------------------- */
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    // The page may override the delivery address via data-mailto.
+    const formEmail = contactForm.dataset.mailto || FIRM_EMAIL;
+    const formEndpoint = 'https://formsubmit.co/ajax/' + formEmail;
+    const statusEl = document.getElementById('contactFormStatus');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Let the browser run its own required/type validation first.
+      if (!contactForm.reportValidity()) return;
+
+      const data = new FormData(contactForm);
+
+      // Honeypot filled in means a bot: pretend success, send nothing.
+      if (data.get('_honey')) {
+        showStatus(statusEl, 'success', 'Thank you — your message has been received.');
+        contactForm.reset();
+        return;
+      }
+
+      const name = (data.get('name') || '').toString().trim();
+      const practiceSelect = contactForm.querySelector('#practice');
+      const practiceLabel = practiceSelect && practiceSelect.selectedIndex > 0
+        ? practiceSelect.options[practiceSelect.selectedIndex].text
+        : 'Not specified';
+
+      // FormSubmit shows field names verbatim in the email it sends, so give
+      // them readable labels rather than the lowercase input names.
+      const payload = {
+        _subject: 'New enquiry from standardpracticeprofessional.com',
+        _template: 'table',
+        _captcha: 'false',
+        Name: name,
+        Email: (data.get('email') || '').toString().trim(),
+        Company: (data.get('company') || '').toString().trim() || 'Not provided',
+        Phone: (data.get('phone') || '').toString().trim() || 'Not provided',
+        'Service of interest': practiceLabel,
+        Message: (data.get('message') || '').toString().trim()
+      };
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Sending…';
+      }
+      showStatus(statusEl, 'success', 'Sending your message…');
+
+      fetch(formEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+        .then((res) => res.json().catch(() => ({})).then((json) => ({ ok: res.ok, json })))
+        .then(({ ok, json }) => {
+          const delivered = ok && (json.success === 'true' || json.success === true);
+          if (!delivered) throw new Error(json.message || 'Delivery failed');
+
+          showStatus(
+            statusEl,
+            'success',
+            '<strong>Thank you' + (name ? ', ' + escapeHtml(name.split(' ')[0]) : '') +
+            '.</strong> Your message is on its way to ' + formEmail +
+            '. We reply within one business day with the right partner to have the conversation with.'
+          );
+          contactForm.reset();
+        })
+        .catch(() => {
+          const body =
+            'Name: ' + payload.Name + '\n' +
+            'Email: ' + payload.Email + '\n' +
+            'Company: ' + payload.Company + '\n' +
+            'Phone: ' + payload.Phone + '\n' +
+            'Service of interest: ' + payload['Service of interest'] + '\n\n' +
+            payload.Message;
+
+          showStatus(
+            statusEl,
+            'error',
+            'We could not send that automatically. <a href="' +
+            buildMailtoFallback('Enquiry — ' + (payload.Name || 'Website'), body) +
+            '">Click here to send it by email instead</a>, or call us on +234-805-606-9623.'
+          );
+        })
+        .then(() => {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+          }
+        });
+    });
+  }
+
+  /* ---- Footer newsletter (present on every page) ------------------------- */
+  document.querySelectorAll('.newsletter-form').forEach((form) => {
+    // Drop the inline no-op handler the markup ships with.
+    form.removeAttribute('onsubmit');
+
+    const input = form.querySelector('input[type="email"]');
+    const button = form.querySelector('button');
+    if (!input || !button) return;
+
+    const originalBtnText = button.textContent;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+
+      const email = input.value.trim();
+      button.disabled = true;
+      button.textContent = '…';
+
+      fetch(ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: 'Newsletter signup — standardpracticeprofessional.com',
+          _captcha: 'false',
+          Email: email,
+          Source: window.location.pathname
+        })
+      })
+        .then((res) => res.json().catch(() => ({})).then((json) => ({ ok: res.ok, json })))
+        .then(({ ok, json }) => {
+          if (!(ok && (json.success === 'true' || json.success === true))) {
+            throw new Error('Delivery failed');
+          }
+          form.reset();
+          button.textContent = 'Joined ✓';
+        })
+        .catch(() => {
+          // Never hijack the page with a mail client here — just tell them.
+          button.textContent = 'Try again';
+          input.value = '';
+          input.placeholder = 'Email us at ' + FIRM_EMAIL;
+        })
+        .then(() => {
+          setTimeout(() => {
+            button.disabled = false;
+            button.textContent = originalBtnText;
+          }, 3500);
+        });
+    });
+  });
+
+  function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, (ch) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    })[ch]);
+  }
+
+});
+
+/* ==========================================================================
+   8. INSIGHTS FILTER + SEARCH (insight.html)
+   The pills and the search box were decorative; this makes them work.
+   Filtering is by the card's data-category, search is a plain substring
+   match across the title and excerpt.
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+
+  const grid = document.getElementById('insightsGrid');
+  if (!grid) return;
+
+  const cards = Array.from(grid.querySelectorAll('.insight-card'));
+  const pills = Array.from(document.querySelectorAll('.filter-pill'));
+  const searchInput = document.getElementById('insightSearch');
+  const emptyState = document.getElementById('insightsEmpty');
+
+  let activeCategory = 'all';
+  let activeQuery = '';
+
+  function cardText(card) {
+    const title = card.querySelector('.insight-title');
+    const excerpt = card.querySelector('.insight-excerpt');
+    return ((title ? title.textContent : '') + ' ' + (excerpt ? excerpt.textContent : '')).toLowerCase();
+  }
+
+  function apply() {
+    let visible = 0;
+
+    cards.forEach((card) => {
+      const category = (card.dataset.category || '').toLowerCase();
+      const matchesCategory = activeCategory === 'all' || category === activeCategory;
+      const matchesQuery = !activeQuery || cardText(card).indexOf(activeQuery) !== -1;
+      const show = matchesCategory && matchesQuery;
+
+      card.hidden = !show;
+      if (show) visible++;
+    });
+
+    if (emptyState) emptyState.hidden = visible !== 0;
+    grid.hidden = visible === 0;
+  }
+
+  function setCategory(category) {
+    activeCategory = (category || 'all').toLowerCase();
+    pills.forEach((pill) => {
+      pill.classList.toggle('active', (pill.dataset.category || '').toLowerCase() === activeCategory);
+    });
+    apply();
+  }
+
+  pills.forEach((pill) => {
+    pill.addEventListener('click', () => setCategory(pill.dataset.category));
+  });
+
+  if (emptyState) {
+    const reset = emptyState.querySelector('[data-category]');
+    if (reset) {
+      reset.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        activeQuery = '';
+        setCategory('all');
+      });
+    }
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      activeQuery = searchInput.value.trim().toLowerCase();
+      apply();
+    });
+  }
+
+  apply();
 });
