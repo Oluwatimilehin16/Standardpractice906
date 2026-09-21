@@ -757,7 +757,7 @@
     '  <div class="chat-box" id="chatBox" role="dialog" aria-label="Chat with Standard Practice" aria-modal="false">',
     '    <div class="chat-header">',
     '      <div class="chat-header-info">',
-    '        <span class="chat-header-title">Ask Standard</span>',
+    '        <span class="chat-header-title">Ask Standard Practice</span>',
     '        <span class="chat-header-status">Standard Assistant Online</span>',
     '      </div>',
     '      <button class="chat-close" id="chatClose" aria-label="Close chat">&times;</button>',
