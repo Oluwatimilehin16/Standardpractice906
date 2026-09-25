@@ -44,7 +44,7 @@
       keywords: ["help", "what can you do", "what do you know", "options", "menu", "assist me", "who are you", "are you a bot", "are you human", "are you real"],
       answer:
         "I am the Standard Practice assistant — an automated guide to this website.\n\n" +
-        "Ask me about: our services (audit, tax, corporate, consulting, actuarial, advisory, accounting), our partners and their credentials, the sectors we serve, our Lagos and Abuja offices, fees, careers, or our published papers on the Nigeria Tax Act.\n\n" +
+        "Ask me about: our services (audit and assurance, tax, corporate, advisory, accounting), our partners and their credentials, the sectors we serve, our Lagos and Abuja offices, fees, careers, or our published papers on the Nigeria Tax Act.\n\n" +
         "For anything requiring judgement, a partner will always take it from here.",
       suggest: ["services-overview", "tax-reform", "partners", "contact"]
     },
@@ -69,7 +69,7 @@
       weight: 1.1,
       answer:
         "Standard Practice Professional is a frontline Nigerian professional services firm — a senior firm by design.\n\n" +
-        "We bring together seasoned, highly qualified experts across Audit and Assurance, Taxation, Consulting Services, Actuarial Services, Advisory and Accounting Services. Our partners carry over twenty-five years of cumulative experience and more than 700 completed engagements, across agriculture, healthcare, energy, manufacturing, financial services, oil and gas, technology and telecommunications and real estate.\n\n" +
+        "We bring together seasoned, highly qualified experts across Audit and Assurance, Taxation, Corporate Services, Advisory and Accounting Services. Our partners carry over twenty-five years of cumulative experience and more than 700 completed engagements, across agriculture, healthcare, energy, manufacturing, financial services, oil and gas, technology and telecommunications and real estate.\n\n" +
         "Small enough to care, senior enough to help, independent enough to be worth listening to.",
       links: [{ label: "Read our story", href: "about.html" }],
       suggest: ["values", "partners", "experience"]
@@ -141,14 +141,12 @@
       keywords: ["service", "services", "practice areas", "practices", "what do you do", "what do you offer", "offer", "offerings", "solutions", "capabilities", "explore services", "full menu", "everything you do"],
       weight: 1.2,
       answer:
-        "We run six practices, each led by a senior practitioner:\n\n" +
+        "We run five practices, each led by a senior practitioner:\n\n" +
         "1. Audit and Assurance — independent, rigorous assurance.\n" +
-        "2. Taxation — compliant, efficient tax planning and advisory.\n" +
-        "3. Corporate Services — registration, compliance and governance.\n" +
-        "4. Consulting Services — operational and strategic problem-solving.\n" +
-        "5. Actuarial Services — risk and valuation modelling.\n" +
-        "6. Advisory — board-level counsel for consequential decisions.\n" +
-        "7. Accounting Services — accurate books and reporting.\n\n" +
+        "2. Taxation — tax planning, compliance and filing, audit support, payroll tax and registration.\n" +
+        "3. Corporate Services — registration, compliance and governance, legal and tax advisory, and business support.\n" +
+        "4. Advisory — strategy, financial, risk and compliance, SME and corporate advisory, and operational improvement.\n" +
+        "5. Accounting Services — bookkeeping, financial reporting, tax preparation, payroll and business advisory.\n\n" +
         "Which one would you like to dig into?",
       links: [{ label: "All services", href: "services.html" }],
       suggest: ["audit", "tax", "corporate", "advisory", "accounting"]
@@ -334,7 +332,7 @@
       id: "consulting",
       keywords: ["consulting", "consultancy", "consultant", "consulting services", "management consulting"],
       answer:
-        "Consulting Services is one of our six practices, staffed by the same senior team. In practice it overlaps closely with our Advisory work — business strategy and planning, operational improvement, risk and compliance, and corporate restructuring — with economic and market intelligence contributed by our economics partner.\n\n" +
+        "Consulting work sits within our Advisory practice — business strategy and planning, financial advisory, risk and compliance, SME and startup advisory, corporate advisory, and operational improvement — with economic and market intelligence contributed by our economics partner.\n\n" +
         "Tell us the problem and we will tell you which practice should own it.",
       links: [{ label: "Advisory", href: "advisory.html" }, { label: "All services", href: "services.html" }],
       suggest: ["advisory", "partners", "consultation"]
@@ -343,9 +341,9 @@
       id: "actuarial",
       keywords: ["actuarial", "actuary", "actuaries", "pension", "pensions", "insurance", "valuation", "risk modelling", "risk modeling", "reserving"],
       answer:
-        "Actuarial Services is one of our six practices — risk and valuation modelling for pensions, insurance and related exposures.\n\n" +
-        "Engagements here are scoped case by case, so the fastest route is a short conversation with a partner about what you need valued or modelled.",
-      links: [{ label: "All services", href: "services.html" }, { label: "Speak with us", href: "contact.html" }],
+        "We do not run a standalone actuarial practice. Valuation and risk questions are handled through our Advisory practice — Financial Advisory (financial planning, investment analysis and risk management) and Risk and Compliance Advisory.\n\n" +
+        "The fastest route is a short conversation with a partner about what you need.",
+      links: [{ label: "Advisory", href: "advisory.html" }, { label: "Speak with us", href: "contact.html" }],
       suggest: ["services-overview", "consultation"]
     },
 
@@ -411,7 +409,7 @@
       answer:
         "Five partners lead the practice, and a partner stays on your file from diagnostic to hand-over:\n\n" +
         "• Idowu Adegboyega, FCA — Lead Consultant and Partner. Internal control, auditing, corporate financial management, strategic tax planning.\n" +
-        "• Kolawole Ogunbowale, FCA — Operational Partner and Co-Founder. Finance, taxation, audit, IFRS accounting and regulatory compliance. FCA, CITN, MBA (Lagos Business School).\n" +
+        "• Kolawole Ogunbowale, FCA, MBA-LBS — Operational Partner and Co-Founder. Finance, taxation, audit, IFRS accounting and regulatory compliance. FCA, CITN, MBA (Lagos Business School).\n" +
         "• Oluwayemisi Kadijat Adeleke, PhD — Consultant and Partner, Economics. Macroeconomics, development economics, sustainable development and industry economic consultation.\n" +
         "• Adenuga Sopeju, FCA — Managing Partner. Financial operations, internal control and audit, IFRS reporting, tax strategy.\n" +
         "• Oluwafunsho Elias-Olasore, ACA — Partner. Financial reporting, audit quality control, regulatory compliance and cross-sector advisory.\n\n" +
@@ -423,7 +421,7 @@
       id: "partner-kolawole",
       keywords: ["kolawole", "ogunbowale", "kolawole ogunbowale", "co-founder", "cofounder", "operational partner"],
       answer:
-        "Kolawole Ogunbowale, FCA — Operational Partner and Co-Founder.\n\n" +
+        "Kolawole Ogunbowale, FCA, MBA-LBS — Operational Partner and Co-Founder.\n\n" +
         "A Chartered Accountant with extensive experience in finance, taxation, audit and accounting practice, driving operational efficiency and financial accuracy across IFRS accounting and regulatory compliance. His work spans audit engagements and assurance, regulatory compliance and reporting, complex financial accounting under IFRS, corporate taxation and advisory, and professional training and practice oversight.\n\n" +
         "He is a Fellow of the Institute of Chartered Accountants of Nigeria (FCA) and of the Chartered Institute of Taxation of Nigeria (CITN), and holds an MBA from Lagos Business School and a B.Sc. in Accounting from Olabisi Onabanjo University.\n\n" +
         "He authored both of the tax papers published on this site.",
@@ -579,7 +577,7 @@
         "We recruit thoughtfully and continuously — there may or may not be a role listed today, but if you are a serious operator we want to talk.\n\n" +
         "How to apply:\n" +
         "1. Email your CV to " + EMAIL + " with the subject line \"Career Enquiry — [Practice Area]\".\n" +
-        "2. Add a short note on the practice you are interested in — Audit and Assurance, Taxation, Consulting, Actuarial, Advisory or Accounting — and any role or level in mind.\n" +
+        "2. Add a short note on the practice you are interested in — Audit and Assurance, Taxation, Corporate Services, Advisory or Accounting — and any role or level in mind.\n" +
         "3. A partner reviews every submission personally. If there is a fit, now or later, we reach out.\n\n" +
         "What we offer: partners who make time for coaching, meaningful equity for senior hires, health, wellness and continuing education stipends, a sabbatical after five years, and a culture built on trust rather than surveillance.",
       links: [{ label: "Careers", href: "careers.html" }, { label: "Email your CV", href: "mailto:" + EMAIL + "?subject=Career%20Enquiry" }],
@@ -591,7 +589,7 @@
       id: "case-studies",
       keywords: ["case study", "case studies", "papers", "paper", "publication", "publications", "insight", "insights", "article", "articles", "blog", "research", "reading", "read", "thought leadership", "what have you published"],
       answer:
-        "We publish technical papers from our partners on the questions clients are actually bringing us. Two are live right now, both by Kolawole Ogunbowale, FCA:\n\n" +
+        "We publish technical papers from our partners on the questions clients are actually bringing us. Two are live right now, both by Kolawole Ogunbowale, FCA, MBA-LBS:\n\n" +
         "• Evolutionary Analysis of Dividend Taxation in Nigeria: From Section 19 CITA to the Nigeria Tax Act (NTA)\n" +
         "• The Imperative of Keeping Proper Books of Account Under the New Tax Regime: Risks, Statutory Mandates, and Safeguards for Taxpayers\n\n" +
         "Both are free to read in full, tables and worked examples included.",
@@ -661,7 +659,7 @@
     "accounting": "Accounting Services",
     "ifrs": "IFRS & GAAP",
     "partners": "Our partners",
-    "partner-kolawole": "Kolawole Ogunbowale",
+    "partner-kolawole": "Kolawole Ogunbowale, FCA, MBA-LBS",
     "partner-idowu": "Idowu Adegboyega",
     "partner-adenuga": "Adenuga Sopeju",
     "partner-yemisi": "Oluwayemisi Adeleke",

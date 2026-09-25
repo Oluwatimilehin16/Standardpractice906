@@ -200,6 +200,7 @@ ul {
   font-weight: 700;
   font-size: 1.15rem;
   line-height: 1;
+  color: var(--accent-green);
 }
 
 .logo-sub {
@@ -1166,6 +1167,12 @@ ul {
 }
 
 .logo-sub-light {
+  color: var(--text-light);
+}
+
+/* In the footer both halves of the wordmark share one colour. */
+.footer .logo-title,
+.footer .logo-sub {
   color: var(--text-light);
 }
 
@@ -3083,6 +3090,9 @@ ul {
 
 .partner-links {
   margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .partner-link-btn {
