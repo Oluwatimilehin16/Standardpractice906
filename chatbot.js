@@ -21,8 +21,8 @@
   "use strict";
 
   const EMAIL = "info@standardpracticeprofessional.com";
-  const PHONE = "+234-805-606-9623";
-  const WHATSAPP = "https://wa.me/2348056069623";
+  const PHONE = "+234-805-606-9324";
+  const WHATSAPP = "https://wa.me/2348056069324";
 
   /* ----------------------------------------------------------
      1. KNOWLEDGE BASE

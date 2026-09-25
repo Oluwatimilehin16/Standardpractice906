@@ -39,28 +39,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Testimonial Switcher (Using String Image Paths)
+  // 4. Testimonial Switcher (text only)
   const clientData = [
     {
       quote: '"Standard Practice brought a level of clarity and discipline our board had been searching for. They challenged us where it mattered and delivered where it counted."',
       initials: 'AO',
       name: 'Adaeze Okafor',
-      role: 'Group CEO, Financial Services',
-      src: './img/test2.png'
+      role: 'Group CEO, Financial Services'
     },
     {
-      quote: '"A team that combines the polish of a global firm with a genuine understanding of the Nigerian operating environment. Rare and valuable."',
-      initials: 'IB',
-      name: 'Ibrahim Bello',
-      role: 'Chairman, Energy Group',
-      src: './img/test3.png'
+      quote: '"Standard Practice Professional has been a dependable partner to Zeko Energy and Petroleum. Their team took charge of our tax compliance and financial reporting, guided us through audits with confidence, and gave us practical advice that has strengthened our operations. We now plan ahead instead of reacting to deadlines."',
+      initials: 'ZE',
+      name: 'Zeko Energy and Petroleum Limited',
+      role: 'Oil and Gas'
     },
     {
       quote: '"Their compliance work put us two years ahead of our regulator\'s expectations. It was a quiet, professional, decisive engagement."',
       initials: 'NA',
       name: 'Tunde Adeyemi',
-      role: 'Chief Risk Officer, Bank',
-      src: './img/test1.png'
+      role: 'Chief Risk Officer, Bank'
     }
   ];
 
@@ -88,12 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const blockquote = container.querySelector('blockquote');
       const nameEl = document.getElementById('clientName');
       const roleEl = document.getElementById('clientRole');
-      const avatarEl = document.getElementById('clientAvatar');
 
       if (blockquote) blockquote.textContent = data.quote;
       if (nameEl) nameEl.textContent = data.name;
       if (roleEl) roleEl.textContent = data.role;
-      if (avatarEl) avatarEl.src = data.src;
 
       container.style.opacity = '1';
     }, 200);
@@ -285,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'error',
             'We could not send that automatically. <a href="' +
             buildMailtoFallback('Enquiry — ' + (payload.Name || 'Website'), body) +
-            '">Click here to send it by email instead</a>, or call us on +234-805-606-9623.'
+            '">Click here to send it by email instead</a>, or call us on +234-805-606-9324.'
           );
         })
         .then(() => {
