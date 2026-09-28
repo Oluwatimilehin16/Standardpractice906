@@ -48,7 +48,7 @@ const clientData = [
       role: 'Infrastructure'
     },
     {
-      quote: '"Standard Practice Professional has been a dependable partner to Zeko Energy and Petroleum. Their team took charge of our tax compliance and financial reporting, guided us through audits with confidence, and gave us practical advice that has strengthened our operations. We now plan ahead instead of reacting to deadlines."',
+      quote: '"Standard Practice Professional has been a great help to Zeko Energy and Petroleum. Their team took charge of our tax compliance and financial reporting, guided us through audits with confidence, and gave us practical advice that has strengthened our operations."',
       initials: 'ZE',
       name: 'Zeko Energy and Petroleum Limited',
       role: 'Oil and Gas'
