@@ -43,15 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
 const clientData = [
     {
       quote: '"Standard Practice brought a level of clarity and discipline our board had been searching for. They challenged us where it mattered and delivered where it counted."',
-      initials: 'LC',
-      name: 'LEKKI CONCESSION',
-      role: 'Infrastructure'
-    },
-    {
-      quote: '"Standard Practice Professional has been a great help to Zeko Energy and Petroleum. Their team took charge of our tax compliance and financial reporting, guided us through audits with confidence, and gave us practical advice that has strengthened our operations."',
       initials: 'ZE',
       name: 'Zeko Energy and Petroleum Limited',
       role: 'Oil and Gas'
+    },
+    {
+      quote: '"Standard Practice Professional has been a great help to POISE. Their team took charge of our tax compliance and financial reporting, guided us through audits with confidence, and gave us practical advice that has strengthened our operations."',
+      initials: 'POISE',
+      name: 'POISE',
+      role: 'Consulting'
     },
     {
       quote: '"Structuring large-scale infrastructure investments requires complex compliance and absolute financial transparency. Standard Practice delivered the precise advisory framework we needed to safeguard institutional trust."',
