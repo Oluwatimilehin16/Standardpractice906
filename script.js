@@ -40,12 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 4. Testimonial Switcher (text only)
-  const clientData = [
+const clientData = [
     {
       quote: '"Standard Practice brought a level of clarity and discipline our board had been searching for. They challenged us where it mattered and delivered where it counted."',
-      initials: 'AO',
-      name: 'Adaeze Okafor',
-      role: 'Group CEO, Financial Services'
+      initials: 'LC',
+      name: 'LEKKI CONCESSION',
+      role: 'Infrastructure'
     },
     {
       quote: '"Standard Practice Professional has been a dependable partner to Zeko Energy and Petroleum. Their team took charge of our tax compliance and financial reporting, guided us through audits with confidence, and gave us practical advice that has strengthened our operations. We now plan ahead instead of reacting to deadlines."',
@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
       role: 'Oil and Gas'
     },
     {
-      quote: '"Their compliance work put us two years ahead of our regulator\'s expectations. It was a quiet, professional, decisive engagement."',
-      initials: 'NA',
-      name: 'Tunde Adeyemi',
-      role: 'Chief Risk Officer, Bank'
-    }
+      quote: '"Structuring large-scale infrastructure investments requires complex compliance and absolute financial transparency. Standard Practice delivered the precise advisory framework we needed to safeguard institutional trust."',
+      initials: 'IFMC',
+      name: 'Infrastructure Finance & Management Company ',
+      role: 'Finance'
+    },
   ];
 
   window.setTestimonial = function(index) {
